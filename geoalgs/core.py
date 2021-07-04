@@ -26,3 +26,9 @@ class Point2D:
 
     def y(self):
         return self.coords[1]
+
+
+def random_points_in_square(num = 10, low = Point2D(0,0), high = Point2D(1,1)):
+    xs = np.random.uniform(low.x(),high.x(),num)
+    ys = np.random.uniform(low.y(),high.y(),num)
+    return list(map(lambda point: Point2D(*point),zip(xs,ys)))

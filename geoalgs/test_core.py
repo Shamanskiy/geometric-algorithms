@@ -80,5 +80,13 @@ class TestPoint2D(unittest.TestCase):
         sorted_points = sorted(points)
         self.assertEqual(ground_truth,sorted_points)
 
+    def test_RandomPoints2D(self):
+        low = core.Point2D(0,0)
+        high = core.Point2D(1,1)
+        points = core.random_points_in_square(3,low=low,high=high)
+        for point in points:
+            self.assertLess(point,high)
+            self.assertLess(low,point)
+
 if __name__ == '__main__':
     unittest.main()

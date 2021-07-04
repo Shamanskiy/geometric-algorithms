@@ -1,4 +1,3 @@
-import core
 
 # Returns true if points A->B->C form a clockwise-convex chain.
 # Takes care of duplicate and nearly identical points.
@@ -17,7 +16,7 @@ def compute_half_hull(points):
     half_hull = points[:2]
     for point in points[2:]:
         half_hull.append(point)
-        if not points_make_a_right_turn(*half_hull[-3:]):
+        while len(half_hull) > 2 and not points_make_a_right_turn(*half_hull[-3:]):
             remove_second_last(half_hull)
     return half_hull
 

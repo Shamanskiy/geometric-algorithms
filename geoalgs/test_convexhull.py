@@ -31,11 +31,11 @@ class TestConvexHull(unittest.TestCase):
 
     def test_ConvexHull_trivial(self):
         input_points = [
-            core.Point2D(0,0), 
             core.Point2D(-1,0),
             core.Point2D(1,0),
             core.Point2D(0,-1),
-            core.Point2D(0,1)
+            core.Point2D(0,1),
+            core.Point2D(-0.5,0)
         ]
         ground_truth = [
             core.Point2D(-1,0), 
